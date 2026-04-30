@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bastien Berceron — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/typo/Dirtyline-36Daysoftype-2022-01238011900/Dirtyline36Daysoftype2022/woff/Dirtyline 36daysoftype 2022.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="./assets/js/script.js" defer></script>
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <img src="./assets/img/LoT.png" alt="Logo" class="loader-logo">
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <header class="header" id="header">
+        <nav class="navbar">
+            <img class="logo" src="./assets/img/LoT.png" alt="Logo Bastien Berceron">
+            <div class="nav-links" id="nav-links">
+                <a href="#" class="nav-link">Accueil</a>
+                <a href="#about-section" class="nav-link">À propos</a>
+                <a href="#projects-section" class="nav-link">Projets</a>
+                <a href="#section-portrait" class="nav-link">Portrait</a>
+                <a href="#contact-section" class="nav-link">Contact</a>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg-text">DESIGN</div>
+            <div class="hero-content">
+                <div class="hero-tag"><span class="dot"></span>Disponible pour de nouveaux projets</div>
+                <h1 class="hero-title">
+                    <span class="hero-line">BASTIEN</span>
+                    <span class="hero-line hero-line--accent">BERCERON</span>
+                </h1>
+                <p class="hero-sub">Design · Programmation · Marketing</p>
+                <div class="hero-cta">
+                    <button class="btn btn--primary" onclick="location.href='#projects-section'">
+                        Voir mes projets
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="btn btn--ghost" onclick="location.href='./assets/img/CV_Bastien.pdf'">CV</button>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <div class="scroll-line"></div>
+                <span>scroll</span>
+            </div>
+            <div class="hero-kanji">さくら</div>
+        </section>
+
+        <section id="about-section" class="about reveal">
+            <div class="about-inner">
+                <div class="section-label">01 — À propos</div>
+                <div class="about-grid">
+                    <div class="about-left">
+                        <h2 class="section-title">Créateur<br><em>d'expériences</em></h2>
+                        <p class="about-desc">Étudiant en première année de Design, Programmation & Marketing. Je conçois des interfaces pensées pour l'humain, entre logique et esthétique.</p>
+                        <div class="about-contact-links">
+                            <a href="mailto:bastienberceron@gmail.com" class="contact-pill">bastienberceron@gmail.com</a>
+                            <a href="tel:0778928712" class="contact-pill">07 78 92 87 12</a>
+                        </div>
+                    </div>
+                    <div class="about-right">
+                        <div class="about-photo-wrap">
+                            <img src="./assets/img/IDP.png" alt="Bastien Berceron" class="about-photo">
+                            <div class="about-photo-tag">
+                                <span>Bastien B.</span>
+                                <span class="tag-sub">19 ans · Chartres</span>
+                            </div>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat"><span class="stat-num">5</span><span class="stat-label">Projets</span></div>
+                            <div class="stat"><span class="stat-num">3</span><span class="stat-label">Disciplines</span></div>
+                            <div class="stat"><span class="stat-num">1<span style="font-size:0.5em">an</span></span><span class="stat-label">D'études</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects reveal" id="projects-section">
+            <div class="section-label">02 — Projets</div>
+            <h2 class="section-title">Mes <em>travaux</em></h2>
+            <div class="filter-button">
+                <button class="filter-btn active" data-category="all" id="tous">Tous</button>
+                <button class="filter-btn" data-category="javascript">JavaScript</button>
+                <button class="filter-btn" data-category="html">HTML</button>
+                <button class="filter-btn" data-category="figma">Figma</button>
+            </div>
+            <div class="projects-grid" id="projects-grid"></div>
+        </section>
+
+        <section class="portrait reveal" id="section-portrait">
+            <div class="section-label">03 — Portrait</div>
+            <h2 class="section-title">Mon portrait <em>chinois</em></h2>
+            <ul class="portrait-list">
+                <li><span class="portrait-if">Si j'étais un animal</span><span class="portrait-answer">Un chat — détendu & libre</span></li>
+                <li><span class="portrait-if">Si j'étais une couleur</span><span class="portrait-answer">Le vert — profond & serein</span></li>
+                <li><span class="portrait-if">Si j'étais une saison</span><span class="portrait-answer">Le printemps — renouveau & vitalité</span></li>
+                <li><span class="portrait-if">Si j'étais un instrument</span><span class="portrait-answer">La batterie — polyvalent & dynamique</span></li>
+            </ul>
+        </section>
+    </main>
+
+    <section class="contact reveal" id="contact-section">
+        <div class="contact-inner">
+            <div class="section-label">04 — Contact</div>
+            <h2 class="section-title">Travaillons<br><em>ensemble</em></h2>
+            <form id="contact-form" action="https://formspree.io/f/xqedbozj" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input id="nom" name="name" type="text" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="votre@email.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Parlez-moi de votre projet..." required></textarea>
+                </div>
+                <button id="envoyer" type="submit" class="btn btn--primary">
+                    Envoyer le message
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </form>
+            <div id="form-status"></div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <img src="./assets/img/FL.png" alt="Logo" class="f-logo">
+                <p class="f-sub">Design · Programmation · Marketing</p>
+            </div>
+            <div class="footer-center">
+                <span class="f-kanji">さくら</span>
+            </div>
+            <div class="footer-right">
+                <div class="f-socials">
+                    <a href="https://www.linkedin.com/in/bastien-berceron-68825928a/" target="_blank">LinkedIn</a>
+                    <a href="https://instagram.com/basti1_b" target="_blank">Instagram</a>
+                    <a href="mailto:bastien.berceron@lamanu-student.fr">Mail</a>
+                </div>
+                <div class="f-legal">
+                    <span>© 2026 Bastien Berceron</span>
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="back-top" aria-label="Retour en haut">↑</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
