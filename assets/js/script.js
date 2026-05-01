@@ -130,6 +130,30 @@ window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 60);
 });
 
+// ===== THEME TOGGLE =====
+const themeStylesheet = document.getElementById('theme-stylesheet');
+const themeToggle = document.getElementById('theme-toggle');
+const baseTheme = './assets/css/style.css';
+const altTheme = './assets/css/style2.css';
+const themeStorageKey = 'portfolioTheme';
+
+function setTheme(isAltTheme) {
+    if (!themeStylesheet || !themeToggle) return;
+    themeStylesheet.setAttribute('href', isAltTheme ? altTheme : baseTheme);
+    themeToggle.setAttribute('aria-pressed', String(isAltTheme));
+    themeToggle.textContent = isAltTheme ? 'Thème sombre' : 'Thème clair';
+    localStorage.setItem(themeStorageKey, isAltTheme ? 'light' : 'dark');
+}
+
+if (themeStylesheet && themeToggle) {
+    const savedTheme = localStorage.getItem(themeStorageKey);
+    setTheme(savedTheme === 'light');
+    themeToggle.addEventListener('click', () => {
+        const isAltThemeActive = themeStylesheet.getAttribute('href') === altTheme;
+        setTheme(!isAltThemeActive);
+    });
+}
+
 // ===== REVEAL ON SCROLL =====
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
